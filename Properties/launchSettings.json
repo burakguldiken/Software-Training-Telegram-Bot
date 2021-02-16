@@ -1,0 +1,16 @@
+{
+  "profiles": {
+    "Development": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "SOFTWARE_TRAINIG": "development"
+      }
+    },
+    "Production": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "SOFTWARE_TRAINIG": "production"
+      }
+    }
+  }
+}
