@@ -15,7 +15,7 @@ namespace SoftwareTraining.Client
 
         public TelegramClient()
         {
-            telegramBotKey = "1522668357:AAH4VOYJDvyNQcT0m2ysIwE8xJrQtpZlgYc";
+            telegramBotKey = "token here";
         }
 
         /// <summary>
