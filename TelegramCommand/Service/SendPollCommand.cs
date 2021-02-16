@@ -1,4 +1,5 @@
 ﻿using SoftwareTraining.Client;
+using SoftwareTraining.Constant;
 using SoftwareTraining.Repository.Dapper.Interface;
 using SoftwareTraining.TelegramCommand.Interface;
 using System;
@@ -28,7 +29,7 @@ namespace SoftwareTraining.TelegramCommand.Service
 
             if(question == null)
             {
-                await telegramBotClient.SendTextMessageAsync(message.Chat.Id, "There are no questions in this category yet");
+                await telegramBotClient.SendTextMessageAsync(message.Chat.Id, Messages.categoryNotFound);
 
                 return;
             }

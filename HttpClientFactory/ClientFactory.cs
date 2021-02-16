@@ -29,10 +29,8 @@ namespace SoftwareTraining.HttpClientFactory
             }
             catch (Exception ex)
             {
-                var b = ex.Message;
+                Console.WriteLine(ex.Message);
             }
-
-            var a = 5;
         }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using Microsoft.Extensions.Configuration;
-using SoftwareTraining.EnvironmentManager.Environment;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,9 +11,9 @@ namespace SoftwareTraining.EnvironmentManager.Connection
 
         public static Connection CreateConnectionInstance
         {
-            get 
+            get
             {
-                if(connection == null)
+                if (connection == null)
                 {
                     connection = new Connection();
                 }
@@ -23,20 +22,33 @@ namespace SoftwareTraining.EnvironmentManager.Connection
             }
         }
 
+        public IConfiguration configuration = null;
+
+        public IConfiguration SetConfiguration()
+        {
+            if (configuration == null)
+            {
+                var builder = new ConfigurationBuilder().AddJsonFile($"EnvironmentManager/appsettings.json", true, true);
+                configuration = builder.Build();
+            }
+            return configuration;
+        }
+
         public string mysqlIp { get; set; }
         public string mysqlPort { get; set; }
         public string database { get; set; }
         public string mysqlPassword { get; set; }
         public string connString { get; set; }
 
+
         public Connection()
         {
-            TelegramEnvironmetManager environment = TelegramEnvironmetManager.Instance;
-            IConfiguration configuration = environment.GetConfiguration();
-            mysqlIp = (string)configuration.GetValue(typeof(string), "mysqlIp");
-            mysqlPort = (string)configuration.GetValue(typeof(string), "mysqlPort");
-            mysqlPassword = (string)configuration.GetValue(typeof(string), "mysqlPass");
-            database = (string)configuration.GetValue(typeof(string), "database");
+            SetConfiguration();
+
+            mysqlIp = configuration.GetValue<string>("SoftwareTraining:mysqlIp");
+            mysqlPort = configuration.GetValue<string>("SoftwareTraining:mysqlPort");
+            mysqlPassword = configuration.GetValue<string>("SoftwareTraining:mysqlPass");
+            database = configuration.GetValue<string>("SoftwareTraining:database");
             connString = $"Server={mysqlIp};Port={mysqlPort};Database={database};Uid=root;Pwd={mysqlPassword};Allow User Variables=True;SslMode=None;Character Set=utf8";
         }
     }
