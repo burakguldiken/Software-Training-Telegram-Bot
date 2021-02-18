@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PLqtlrOgJyc5W9qPbsEfFW68zmvQ3tYrphxWtGs0QPmFFH0SUtJC7e6e8dyGPB5z+04555uhnLHTiObZXjJrbQ==",
+  "dgSpecHash": "1KfiGqCCA4h+xvWYw+KNJpNrXelEaOEE1W3SAD6/AngqCyZ36wavpFOLlYIWn/LsHbYchUwVBgDKwHdHYauxnA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\burak\\source\\repos\\SoftwareTraining\\SoftwareTraining\\SoftwareTraining.csproj",
+  "projectFilePath": "C:\\Users\\burak\\Desktop\\SoftwareTraining\\SoftwareTraining\\SoftwareTraining.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\burak\\.nuget\\packages\\bouncycastle.netcore\\1.8.5\\bouncycastle.netcore.1.8.5.nupkg.sha512",
     "C:\\Users\\burak\\.nuget\\packages\\dapper\\2.0.78\\dapper.2.0.78.nupkg.sha512",
