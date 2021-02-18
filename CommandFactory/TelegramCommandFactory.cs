@@ -29,16 +29,17 @@ namespace SoftwareTraining.CommandFactory
                 case "/csharpquestion":
                     result = Tuple.Create<ITelegramCommand,int>(_serviceProvider.GetRequiredService<SendPollCommand>(), (int)EnumCategory.Csharp);
                     break;
+
+                case "/sqlserverquestion":
+                    result = Tuple.Create<ITelegramCommand, int>(_serviceProvider.GetRequiredService<SendPollCommand>(), (int)EnumCategory.SqlServer);
+                    break;
+
+                case "/javascriptquestion":
+                    result = Tuple.Create<ITelegramCommand, int>(_serviceProvider.GetRequiredService<SendPollCommand>(), (int)EnumCategory.Javascript);
+                    break;
             }
 
             return result;
-
-
-            //return command.Text switch
-            //{
-            //    "/csharpquestion" => _serviceProvider.GetRequiredService<SendPollCommand>(),
-            //    _ => _serviceProvider.GetRequiredService<SendPollCommand>()
-            //};
         }
     }
 }

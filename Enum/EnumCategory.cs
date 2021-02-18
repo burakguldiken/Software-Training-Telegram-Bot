@@ -10,14 +10,12 @@ namespace SoftwareTraining.Enum
         [Description("1")]
         Csharp = 1,
         [Description("2")]
-        Mvc = 2,
+        SqlServer = 2,
         [Description("3")]
-        Python = 3,
+        Javascript = 3,
         [Description("4")]
         Html = 4,
         [Description("5")]
         Css = 5,
-        [Description("6")]
-        Javascript = 6
     }
 }

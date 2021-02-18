@@ -12,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Telegram.Bot;
+using Telegram.Bot.Types.Enums;
 
 namespace SoftwareTraining.TelegramBotEvent
 {
@@ -35,13 +36,17 @@ namespace SoftwareTraining.TelegramBotEvent
             questionRepositoy = serviceProvider.GetRequiredService<IQuestionRepository>();
             historyRepository = serviceProvider.GetRequiredService<IHistoryRepository>();
             telegramCommandFactory = serviceProvider.GetRequiredService<ITelegramCommandFactory>();
-            
+
             telegramBotClient = telegramClient.CreateInstance();
         }
 
         public static async void BotOnMessage(object sender, Telegram.Bot.Args.MessageEventArgs e)
         {
             Builder();
+
+            //var response = clientFactory.RequestTest();
+
+            await telegramBotClient.SendTextMessageAsync(e.Message.Chat.Id, "", ParseMode.Html);
 
             History history = new History()
             {

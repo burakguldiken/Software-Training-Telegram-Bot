@@ -15,7 +15,7 @@ namespace SoftwareTraining.HttpClientFactory
             this.clientFactory = clientFactory;
         }
 
-        public async Task RequestTest()
+        public string RequestTest()
         {
             var request = new HttpRequestMessage(HttpMethod.Get, "https://www.tutorialspoint.com/csharp/csharp_question_bank/62.htm?QN=2");
 
@@ -23,14 +23,17 @@ namespace SoftwareTraining.HttpClientFactory
 
             try
             {
-                var response = await client.SendAsync(request);
-                var responseString = await response.Content.ReadAsStringAsync();
+                var response = client.SendAsync(request).Result;
+                var responseString = response.Content.ReadAsStringAsync().Result;
 
+                return responseString;
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
+
+            return default;
         }
     }
 }

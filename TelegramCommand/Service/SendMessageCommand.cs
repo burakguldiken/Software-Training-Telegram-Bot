@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Telegram.Bot;
 using Telegram.Bot.Types;
+using Telegram.Bot.Types.Enums;
 
 namespace SoftwareTraining.TelegramCommand.Service
 {
@@ -20,7 +21,7 @@ namespace SoftwareTraining.TelegramCommand.Service
 
         public async Task ExecuteCommand(Message message,int category = 1)
         {
-            await telegramBotClient.SendTextMessageAsync(message.Chat.Id,"");
+            await telegramBotClient.SendTextMessageAsync(message.Chat.Id, "<html><b>bold</b>, <strong>bold</strong></html>", (ParseMode.Html));
         }
     }
 }

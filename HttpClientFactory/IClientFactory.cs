@@ -7,6 +7,6 @@ namespace SoftwareTraining.HttpClientFactory
 {
     public interface IClientFactory
     {
-        public Task RequestTest();
+        public string RequestTest();
     }
 }
