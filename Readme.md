@@ -62,7 +62,7 @@ public ITelegramBotClient CreateInstance()
 - The service used to send questions can be defined as follows.Chat id value, question title, question types, poll type (in this example it can be quiz, questionnaire, etc.) should be sent as parameters.
   
 
-```
+```c#
 public async Task ExecuteCommand(Message message,int category = 1)
         {
             var question = questionRepository.GetRandomQuestion(category);
