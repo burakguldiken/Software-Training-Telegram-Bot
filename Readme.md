@@ -3,6 +3,7 @@
 # Telegram Software Training Bot
 
 ##### To use : [Telegram: Contact @Software_Training_Bot](https://t.me/Software_Training_Bot)
+##### Medium Link : [Telegram Bot By .Net Core Console](https://burakguldiken1.medium.com/net-core-console-uygulmas%C4%B1-i%CC%87le-telegram-botu-geli%C5%9Ftirmek-f05fab02c1af)
 
 - [ ] you can take questions and practice programming languages
   
